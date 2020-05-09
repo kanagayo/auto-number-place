@@ -32,3 +32,32 @@ function drawField(field) {
         }
     }
 }
+
+function drawPossibleField(field) {
+    for(let i = 0; i < NUMBER_OF_FIELD; i++) {
+        for(let j = 0; j < NUMBER_OF_FIELD; j++) {
+            if(field[i][j].getIsUnique()) {
+                continue;
+            } else {
+                let newTable = document.createElement("table");
+                newTable.setAttribute("class", "miniTable");
+                let tdId = String(i) + String(j);
+                let cell = document.getElementById(tdId);
+                for(let x = 0; x < 3; x++) {
+                    let newTr = document.createElement("tr");
+                    for(let y = 0; y < 3; y++) {
+                        let newTd = document.createElement("td");
+                        if(field[i][j].getIsNum((x * 3) + y)) {
+                            newTd.innerText = (x * 3) + y;
+                        }
+                        newTd.setAttribute("class", "miniCell");
+                        newTr.appendChild(newTd);
+                    }
+                    newTable.appendChild(newTr);
+                }
+                cell.appendChild(newTable);
+                
+            }
+        }
+    }
+}

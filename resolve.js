@@ -29,4 +29,5 @@ function resolveNumberPlace() {
     }
     console.log(field);
     drawField(field.getValue());
+    drawPossibleField(field.getValue());
 }
