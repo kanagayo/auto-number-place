@@ -1,10 +1,7 @@
 const NUMBER_OF_FIELD = 9;
 const MAX_NUMBER = 9;
 
-console.log("hoge");
-
 let field = new FIELD();
-console.log(field.getValue());
 
 function getFieldWithData(datas) {
     let field = new FIELD();

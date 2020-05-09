@@ -26,7 +26,16 @@ fileReader.onload = function() {
         }
     }
 
+    for(let i = 0; i < NUMBER_OF_FIELD; i++) {
+        for(let j = 0; j < NUMBER_OF_FIELD; j++) {
+            if(0 < cells[i][j] && cells[i][j] < 10) {
+                continue;
+            } else {
+                cells[i][j] = "";
+            }
+        }
+    }
+
     field = getFieldWithData(cells);
-    console.log(field.getValue());
     drawField(field.getValue());
 }
